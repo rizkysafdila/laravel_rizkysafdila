@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Pasien;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,6 @@ class PasienSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Pasien::factory(20)->create();
     }
 }

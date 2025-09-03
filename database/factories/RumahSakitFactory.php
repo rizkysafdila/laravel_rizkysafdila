@@ -17,7 +17,10 @@ class RumahSakitFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nama_rumah_sakit' => $this->faker->company . ' Hospital',
+            'alamat'           => $this->faker->address,
+            'email'            => $this->faker->unique()->safeEmail,
+            'telepon'          => $this->faker->numerify('021########'),
         ];
     }
 }

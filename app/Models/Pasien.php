@@ -11,6 +11,7 @@ class Pasien extends Model
     use HasFactory;
 
     protected $fillable = ['nama_pasien','alamat','no_telpon','rumah_sakit_id'];
+
     public function rumahSakit() {
         return $this->belongsTo(RumahSakit::class);
     }

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\RumahSakit;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,10 @@ class PasienFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nama_pasien'    => $this->faker->name,
+            'alamat'         => $this->faker->address,
+            'no_telpon'      => $this->faker->numerify('08#########'),
+            'rumah_sakit_id' => RumahSakit::inRandomOrder()->first()?->id ?? RumahSakit::factory(),
         ];
     }
 }
